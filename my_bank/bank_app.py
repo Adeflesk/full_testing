@@ -1,27 +1,34 @@
-from flask import Flask, render_template, request
+"""This Module is to serve bank accounts on local hoset
+"""
 import os
 import sys
+from flask import Flask, render_template, request
 
-file_dir = os.path.dirname(__file__)
-sys.path.append(file_dir)
+FILE_DIR = os.path.dirname(__file__)
+sys.path.append(FILE_DIR)
+
+from account import Account
 from bank import Bank
 
 
-app = Flask(__name__,template_folder='templates')
-app.config.update(
-   TESTING=True,
-   EXPLAIN_TEMPLATE_LOADING=True
-)
+APP = Flask(__name__, template_folder="templates")
+APP.config.update(TESTING=True, EXPLAIN_TEMPLATE_LOADING=True)
 BANK = Bank()
 
 
-@app.route("/")
+@APP.route("/")
 def hello_world():
-    #return 'Hello World!'
-    account_number = request.args.get('account_number')
+    """This calls the home page and renders it index.html
+    """
+    account_number = request.args.get("account_number")
     balance = BANK.get_account_balance(account_number)
-    return render_template('index.html', balance=balance)
+    return render_template("index.html", balance=balance)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import cProfile
+
+    # ACCOUNT = Account("1111", 50)
+    #  BANK.add_account(ACCOUNT) needed to run cProfile
+    #    cProfile.run("APP.run(debug=True)", sort="time")
+    APP.run(debug=True)

@@ -19,4 +19,7 @@ Preformance Testing
    jmeter -n -t HTTP\ Request.jmx -l results.jtl
    This puts all resultes into file results.jtl
    
-   
+Code profiling 
+   Adding cProfile to the bank_app run code to profile the calls
+   installing $ pip install pycallgraph to create a visual 
+   run code by $ pycallgraph graphviz -- bank_app.py
