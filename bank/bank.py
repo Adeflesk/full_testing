@@ -7,6 +7,7 @@ class Bank(object):
         return self._accounts
 
     def add_account(self, account):
+        print("creating an account")
         self._accounts[account.account_number] = account.balance
 
     def get_account_balance(self, account_number):
