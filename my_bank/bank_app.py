@@ -2,13 +2,15 @@
 """
 import os
 import sys
-from flask import Flask, render_template, request
-
 FILE_DIR = os.path.dirname(__file__)
 sys.path.append(FILE_DIR)
 
-from account import Account
 from bank import Bank
+from flask import Flask, render_template, request  # pylint: disable=E0401
+
+#from account import Account needed when cProfile is used below
+
+
 
 
 APP = Flask(__name__, template_folder="templates")
@@ -26,7 +28,7 @@ def hello_world():
 
 
 if __name__ == "__main__":
-    import cProfile
+    #import cProfile
 
     # ACCOUNT = Account("1111", 50)
     #  BANK.add_account(ACCOUNT) needed to run cProfile

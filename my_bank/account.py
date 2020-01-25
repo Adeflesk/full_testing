@@ -13,8 +13,7 @@ class Account:
 
     @property
     def account_number(self):
-        """ getter method to return the private variable 
-            .account_number
+        """ getter method to return the private variable .account_number
         """
         return self._account_number
 
