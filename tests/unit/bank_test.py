@@ -1,7 +1,7 @@
 import unittest
 
-from bank.account import Account
-from bank.bank import Bank
+from my_bank.account import Account
+from my_bank.bank import Bank
 
 class BankTest(unittest.TestCase):
     def test_bank_is_initially_empty(self):

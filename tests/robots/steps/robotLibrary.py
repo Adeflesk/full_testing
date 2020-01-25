@@ -1,7 +1,7 @@
 import sys
 sys.path.append("/Users/adriancorsini/Documents/playground/Google/full_testing_python/")
-from bank.account import Account
-from bank.bank_app import app, BANK
+from my_bank.account import Account
+from my_bank.bank_app import app, BANK
 from nose.tools import assert_equal, assert_in
 from webtest import TestApp
 

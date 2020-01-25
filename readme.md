@@ -13,5 +13,10 @@ Accepting testing
    Creating web app with flask
    The flask app is in bank/bank_app.py
    
-
+Preformance Testing
+   Set up JMeter this produced file HTTP Request.jmx
+   Jmeter can be run on the command line with 
+   jmeter -n -t HTTP\ Request.jmx -l results.jtl
+   This puts all resultes into file results.jtl
+   
    
